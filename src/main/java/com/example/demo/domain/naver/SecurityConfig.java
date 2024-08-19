@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.naver;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.NaverOAuthToken;
-import com.example.demo.domain.NaverProfileResponse;
+import com.example.demo.domain.naver.NaverOAuthToken;
+import com.example.demo.domain.naver.NaverProfileResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.*;
@@ -25,7 +25,7 @@ public class NaverController {
     @RequestMapping("/callback")
     public ResponseEntity<?> CallBack() {
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("loginafter.html"));
+        headers.setLocation(URI.create("welcome.html"));
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
     }
 

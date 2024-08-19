@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.naver;
 
 public class NaverOAuthToken {
     private String access_token;
