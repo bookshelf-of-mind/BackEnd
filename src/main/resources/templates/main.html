@@ -51,14 +51,12 @@
 <body>
 <div class="container">
     <h1>마음의책장</h1>
-    <p class="user-info">Id: <span th:text="${email}">example11@naver.com</span></p>
-    <form action="/main" method="get">
-        <label for = "nick"></label>
-        <input type = "text" id = "nick" name = "nick"><span> 의 마음의 책장</span>
-        <p>
-        <button type="submit">확인</button>
-        </p>
-    </form>
+    <p>
+    <span th:text="${nick}"></span>의 마음의 책장
+    </p>
+    <p>
+    <a href="../static/send.html"><button>책 보내기</button></a>
+    </p>
 </div>
 </body>
 </html>
