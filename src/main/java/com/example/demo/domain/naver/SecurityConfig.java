@@ -27,6 +27,7 @@ public class SecurityConfig {
                 .requestMatchers("/manager/**").hasAnyRole("ADMIN", "MANAGER")
                 .requestMatchers("/admin/**")
                 .hasAnyRole("ADMIN").anyRequest().permitAll());
+        http.csrf().disable();
 
         return http.build();
     }
