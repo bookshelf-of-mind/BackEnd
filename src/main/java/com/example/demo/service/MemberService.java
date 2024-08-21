@@ -19,7 +19,7 @@ public class MemberService {
     }
 
     @Transactional
-    public Member saveNickname(Member nick) {
-        return memberRepository.save(nick);
+    public Member saveMember(Member member) {
+        return memberRepository.save(member);
     }
 }

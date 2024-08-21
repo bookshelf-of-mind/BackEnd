@@ -29,6 +29,11 @@ public class NaverController {
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
     }
 
+    @RequestMapping("/welcome")
+    public String loginafter() {
+        return "welcome";
+    }
+
     public void NaverCallback(String code, String state) throws JsonProcessingException {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("grant_type", "authorization_code");
@@ -81,4 +86,6 @@ public class NaverController {
         HttpEntity<MultiValueMap<String, String>> naverProfileRequest = new HttpEntity<>(headers);
         return naverProfileRequest;
     }
+
+
 }
