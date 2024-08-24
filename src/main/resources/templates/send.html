@@ -1,0 +1,49 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>보내기</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <form action = "/ok" method = "post">-->
+<!--        <p><span>받는 사람: </span><input type = "text" name = "nick"></p>-->
+<!--        <p><span>책 이름: </span><input type = "text" name = "book"></p>-->
+<!--        <p><span>책 글귀: </span><input type = "text" name = "message"></p>-->
+<!--        <p><button type = "submit">전송</button></p>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마음의 책장</title>
+<!--    <link rel="stylesheet" href="/b.css"/>-->
+</head>
+<body>
+    <div class="modal">
+        <div class="modal_body">
+            <h2>마음책 전하기</h2>
+            <form action = "/ok" method = "post">
+                <p><span>받는 사람: </span><input type = "text" name = "nick"></p>
+                <p><span>책 이름: </span><input type = "text" name = "book"></p>
+                <p><span>책 글귀: </span><input rtpe = "text" name = "message"></p>
+                <div class="inputs">
+                <button type="submit" class="btn" onclick="alert('전송이 완료되었습니다.')">보내기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--    <button class="btn-open-modal">전송</button>-->
+<!--    <script>-->
+<!--        const modal = document.querySelector('.modal');-->
+<!--        const btnOpenModal=document.querySelector('.btn-open-modal');-->
+
+<!--        btnOpenModal.addEventListener("click", ()=>{-->
+<!--            modal.style.display="flex";-->
+<!--        });-->
+<!--    </script>-->
+</body>
+</html>

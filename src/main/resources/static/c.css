@@ -42,3 +42,22 @@ width: 40px;
 .footer-icons:hover .footer-icons__img {
 animation: 2s icons-둥-둥;
 }
+
+.container {
+    width: 300px;
+    height: 500px;
+}
+
+div {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+button {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>확인</title>
+</head>
+<body>
+<h1>Messages</h1>
+<ul>
+    <li th:each="member : ${members}">
+        <span th:text="${member.book}">Sample Message</span>
+        <span th:text="${member.message}">Sample Message</span>
+    </li>
+</ul>
+</body>
+</html>
