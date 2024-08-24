@@ -1,64 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-            rel="stylesheet"
-            as="style"
-            crossorigin
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
-    />
-    <link rel="stylesheet" href="c.css">
+    <title>마음의 책장</title>
     <style>
-        /* Grid 스타일 추가 */
-        main {
-          display: grid;
-          place-items: center; /* 수평 및 수직 가운데 정렬 */
-          height: 100vh; /* 화면 전체 높이 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
 
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* 버튼들을 중앙에 정렬 */
+            gap: 20px;
+        }
+
+        .button {
+            width: 140px; /* 버튼의 너비 증가 */
+            height: 55px; /* 버튼의 높이 증가 */
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px; /* 글자 크기 증가 */
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .footer-block {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .footer-icons {
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        .footer-icons__desc {
+            margin-top: 5px;
+            font-weight: bold;
+            transform: scale(0.8);
+        }
+
+        @keyframes icons-둥-둥 {
+            0% { transform: translateY(0px); }
+            30% { transform: translateY(-10px); }
+            70% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .footer-icons__img {
+            width: 40px;
+        }
+
+        .footer-icons:hover .footer-icons__img {
+            animation: 2s icons-둥-둥;
+        }
     </style>
 </head>
 <body>
-<header></header>
-
-<main>
-    <img src="main2.png" alt="중앙에 위치한 이미지" />
-</main>
-
-<footer>
-    <div class="footer-block">
-        <div class="footer-icons">
-            <div class="footer-icons__img">
-                <!--                <img src="assets/home.svg" alt="" />-->
-            </div>
-            <a href="help.html" target="_blank"><div class="footer-icons__desc">도움말</div></a>
-        </div>
-        <div class="footer-icons">
-            <div class="footer-icons__img">
-<!--                <img src="assets/home.svg" alt="" />-->
-            </div>
-            <div class="footer-icons__desc" onclick="location.href = 'join.html'">만들기</div>
-        </div>
-        <div class="footer-icons">
-            <div class="footer-icons__img">
-<!--                <img src="assets/doc.svg" alt="" />-->
-            </div>
-            <a href = "/check"><div class="footer-icons__desc">확인하기</div></a>
-        </div>
-        <div class="footer-icons">
-            <div class="footer-icons__img">
-<!--                <img src="assets/location.svg" alt="" />-->
-            </div>
-            <div class="footer-icons__desc">공유하기</div>
-        </div>
+<div class="container">
+    <img src="/logo2.png" alt="로고" class="logo">
+    <img src="/main1.png" alt="메인 이미지" class="main-image">
+    <div class="button-container">
+        <a href="help.html" onclick="window.open(this.href, '_blank', 'width=700, height=500'); return false;">
+            <button class="button">도움말</button>
+        </a>
+        <a href="naverlogin.html">
+            <button class="button">만들기</button>
+        </a>
     </div>
-</footer>
-
-<div class="media-info-msg">화면 사이즈를 줄여주세요.</div>
+</div>
 </body>
 </html>

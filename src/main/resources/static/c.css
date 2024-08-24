@@ -48,15 +48,15 @@ animation: 2s icons-둥-둥;
     height: 500px;
 }
 
-div {
+.div {
     width: 100%;
     text-align: center;
     display: inline-block;
 }
 
-button {
-    width: 50px;
-    height: 30px;
+.button {
+    width: 70px;
+    height: 40px;
     border: none;
     border-radius: 8px;
     font-weight: bold;

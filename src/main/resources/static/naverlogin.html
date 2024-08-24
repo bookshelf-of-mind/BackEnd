@@ -3,17 +3,48 @@
 <head>
     <meta charset="utf-8">
     <title>네이버 로그인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-container h1 {
+            color: #03C75A;
+            margin-bottom: 20px;
+        }
+        #naver_id_login {
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-<!-- 네이버 로그인 버튼 노출 영역 -->
-<div id="naver_id_login"></div>
-<!-- //네이버 로그인 버튼 노출 영역 -->
+<div class="login-container">
+    <h1>마음의책장 로그인</h1>
+    <div id="naver_id_login"></div>
+</div>
+
 <script type="text/javascript">
     var naver_id_login = new naver_id_login("T1E1JufSJS7SplQfligt", "http://127.0.0.1:8080/callback");
     var state = naver_id_login.getUniqState();
-    naver_id_login.setButton("white", 2,40);
+    naver_id_login.setButton("green", 3, 60);
     naver_id_login.setDomain("http://127.0.0.1:8080/~~");
     naver_id_login.setState(state);
     naver_id_login.init_naver_id_login();

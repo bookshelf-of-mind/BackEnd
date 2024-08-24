@@ -14,12 +14,16 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
 
-    public List<Member> findAllUsers() {
+    public List<Member> findAllMembers() {
         return memberRepository.findAll();
     }
 
     @Transactional
     public Member saveMember(Member member) {
         return memberRepository.save(member);
+    }
+
+    public List<Member> findMembersByNick(String nick) {
+        return memberRepository.findByNick(nick);
     }
 }

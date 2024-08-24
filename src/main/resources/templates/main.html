@@ -1,43 +1,106 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Welcome</title>-->
-
-<!--</head>-->
-<!--<body>-->
-<!--<div class="container">-->
-<!--    <h1>마음의책장</h1>-->
-<!--        <span th:text="${nick}"></span>의 마음의 책장-->
-<!--    <p>-->
-<!--    <a href="/send"><button>책 보내기</button></a>-->
-<!--    </p>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마음의 책장</title>
-    <link rel="stylesheet" href="/c.css"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* 모던한 Google Fonts를 사용하는 것도 추천합니다. */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .button-red {
+            background-color: #e74c3c;
+        }
+
+        .button-green {
+            background-color: #27ae60;
+        }
+
+        .button-yellow {
+            background-color: #f1c40f;
+        }
+
+        .button-grey {
+            background-color: #7f8c8d;
+        }
+
+        .highlighted-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2c3e50;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            padding: 10px 0;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <img src="/logo2.png" width="150px">
-    <br>
-    <h2>
-        <span th:text="${nick}"></span>의 마음의 책장
-    </h2>
-    <img src="/main1.png">
-    <button class="button1" style=background-color:red>빨강</button>
-    <button class="button2" style=background-color:green>초록</button>
-    <button class="button3" style=background-color:yellow>노랑</button>
-    <button onclick="window.open('/send','_blank','width=300, height=500')" class="button3" style=background-color:grey>책 보내기</button>
-
+    <img src="/logo2.png" alt="Logo">
+    <p class="highlighted-text">
+        <span th:text="${lastnick}"></span>의 마음의 책장
+    </p>
+    <img src="/main1.png" alt="Main Image">
+    <div>
+        <button class="button button-red">빨강</button>
+        <button class="button button-green">초록</button>
+        <button class="button button-yellow">노랑</button>
+    </div>
+    <p>
+        <button onclick="window.open('/send','_blank','width=800, height=800')" class="button button-grey">책 보내기</button>
+        <button onclick="window.open('/check','_blank','width=800, height=500')" class="button button-grey">확인하기</button>
+        <button class="button button-grey">공유하기</button>
+    </p>
 </div>
 </body>
 </html>
+

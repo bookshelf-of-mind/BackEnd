@@ -2,12 +2,15 @@ package com.example.demo.controller;
 
 
 import com.example.demo.domain.member.Member;
+import com.example.demo.repositroy.UserRepository;
 import com.example.demo.service.MemberService;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -15,13 +18,10 @@ public class MemberController {
 
     @Autowired
     private MemberService memberService;
-    private Model model;
 
-//    @PostMapping("/main")
-//    public Member createMember(@RequestParam("nick") String nick, Member member) {
-//        member.setNick(nick);
-//        return memberService.saveMember(member);
-//    }
+    @Autowired
+    private UserService userService;
+
 
     @RequestMapping("/send")
     public String send() {
@@ -42,15 +42,17 @@ public class MemberController {
     }
 
     @GetMapping("/check")
-    public String getUsers(Model model) {
-        List<Member> members = memberService.findAllUsers();
-        model.addAttribute("members", members);
-        return "check";
-    }
+    public String getMembers(Model model) {
+        System.out.println("UserService: " + userService);    // 로그 추가
+        System.out.println("MemberService: " + memberService); // 로그 추가
 
-    @RequestMapping("/main")
-    public String submitText(@RequestParam("nick") String nick, Model model) {
-        model.addAttribute("nick", nick);
-        return "main";
+        String lastNick = userService.findLastNick();
+        if (lastNick != null) {
+            List<Member> members = memberService.findMembersByNick(lastNick);
+            model.addAttribute("members", members);
+        } else {
+            model.addAttribute("members", new ArrayList<>()); // 빈 리스트 추가
+        }
+        return "check";
     }
 }

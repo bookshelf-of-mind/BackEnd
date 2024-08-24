@@ -3,62 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>마음의책장</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e9ecef;
             margin: 0;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 400px;
             background: #fff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
         }
         h1 {
             color: #4CAF50;
             margin-bottom: 20px;
-        }
-        .user-info {
-            margin: 20px 0;
-            font-size: 18px;
-            color: #555;
-        }
-        .user-info span {
+            font-size: 26px;
             font-weight: bold;
         }
-        .logout-button {
-            display: inline-block;
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .submit-button {
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #3498db;
+            background-color: #4CAF50;
             border: none;
             border-radius: 5px;
-            text-decoration: none;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .logout-button:hover {
-            background-color: #2980b9;
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>마음의책장</h1>
-    <form action = "/main" method="post">
-        <label>
-            <input type = "text"  name = "nick">
-        </label><span> 의 마음의 책장</span>
-        <p>
-            <button type="submit">확인</button>
-        </p>
+    <form action="/main" method="post">
+        <div class="form-group">
+            <label for="lastnick">닉네임을 입력하세요</label>
+            <input type="text" id="lastnick" name="lastnick" placeholder="예: 재익">
+        </div>
+        <button type="submit" class="submit-button">확인</button>
     </form>
+    <div class="footer">
+        © 2024 마음의책장. All rights reserved.
+    </div>
 </div>
 </body>
 </html>
